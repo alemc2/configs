@@ -1,0 +1,11 @@
+[user]
+	email = alemc2@gmail.com
+	name = alemc2
+[diff]
+	tool = gvimdiff
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
+[core]
+	excludesfile = /home/srivas/.gitignore
