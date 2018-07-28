@@ -1,11 +1,27 @@
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 [user]
-	email = alemc2@gmail.com
-	name = alemc2
-[diff]
-	tool = gvimdiff
-[difftool]
-	prompt = false
-[alias]
-	d = difftool
+	name = srivasv
+	email = srivas@imagen.ai
 [core]
-	excludesfile = /home/srivas/.gitignore
+	editor = vim
+[diff]
+	tool = p4mergetool
+[difftool]
+    prompt = False
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
+[merge]
+	tool = p4mergetool
+[mergetool "meld"]
+    cmd = meld $PWD/$LOCAL $PWD/$MERGED $PWD/$REMOTE --output $PWD/$MERGED
+[mergetool "p4mergetool"]
+	cmd = p4merge $PWD/$BASE $PWD/$REMOTE $PWD/$LOCAL $PWD/$MERGED
+	trustExitCode = false
+[mergetool]
+	keepBackup = false
+[difftool "p4mergetool"]
+	cmd = p4merge $LOCAL $REMOTE
