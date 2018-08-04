@@ -153,7 +153,7 @@ set formatexpr=autofmt#japanese#formatexpr()
 " endif
 
 " If true Vim master, use English help file.
-set helplang& helplang=en,ja
+set helplang& helplang=en
 
 " Default home directory.
 let t:cwd = getcwd()

@@ -34,6 +34,7 @@ let g:tex_flavor = 'latex'
 
 " python.vim
 let python_highlight_all = 1
+let g:python_recommended_style = 0
 
 " http://mattn.kaoriya.net/software/vim/20140523124903.htm
 let g:markdown_fenced_languages = [
@@ -99,7 +100,11 @@ _ = '''
   endif
 '''
 
-python = 'setlocal foldmethod=indent'
+python = '''
+echo "got here"
+setlocal foldmethod=indent
+set expandtab shiftwidth=2 softtabstop=2 tabstop=2
+'''
 
 html = '''
 setlocal includeexpr=substitute(v:fname,'^\\/','','')

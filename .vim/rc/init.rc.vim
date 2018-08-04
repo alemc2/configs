@@ -49,7 +49,6 @@ let g:maplocalleader = 'm'
 
 " Release keymappings for plug-in.
 nnoremap ;  <Nop>
-nnoremap m  <Nop>
 nnoremap ,  <Nop>
 
 if IsWindows()
@@ -84,6 +83,8 @@ endif
 " Disable packpath
 set packpath=
 
+" Set runtimepath
+
 
 "---------------------------------------------------------------------------
 " Disable default plugins
@@ -100,9 +101,9 @@ let g:loaded_gzip              = 1
 let g:loaded_man               = 1
 let g:loaded_matchit           = 1
 let g:loaded_matchparen        = 1
-let g:loaded_netrwFileHandlers = 1
-let g:loaded_netrwPlugin       = 1
-let g:loaded_netrwSettings     = 1
+"let g:loaded_netrwFileHandlers = 1
+"let g:loaded_netrwPlugin       = 1
+"let g:loaded_netrwSettings     = 1
 let g:loaded_rrhelper          = 1
 let g:loaded_shada_plugin      = 1
 let g:loaded_spellfile_plugin  = 1

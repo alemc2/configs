@@ -28,13 +28,15 @@ inoremap <C-u>  <C-g>u<C-u>
 
 " Command-line mode keymappings:"{{{
 " <C-a>, A: move to head.
-cnoremap <C-a>          <Home>
+noremap <C-a>          <Home>
+inoremap <C-a>          <Home>
 " <C-b>: previous char.
 cnoremap <C-b>          <Left>
 " <C-d>: delete char.
 cnoremap <C-d>          <Del>
 " <C-e>, E: move to end.
-cnoremap <C-e>          <End>
+noremap <C-e>          <End>
+inoremap <C-e>          <End>
 " <C-f>: next char.
 cnoremap <C-f>          <Right>
 " <C-n>: next history.
@@ -97,9 +99,6 @@ nnoremap x "_x
 " Disable Ex-mode.
 nnoremap Q  q
 
-" Useless command.
-nnoremap M  m
-
 " Smart <C-f>, <C-b>.
 noremap <expr> <C-f> max([winheight(0) - 2, 1])
       \ . "\<C-d>" . (line('w$') >= line('$') ? "L" : "M")
@@ -153,8 +152,6 @@ xnoremap ir  i]
 "}}}
 
 " Improved increment.
-nmap <C-a> <SID>(increment)
-nmap <C-x> <SID>(decrement)
 nnoremap <silent> <SID>(increment)    :AddNumbers 1<CR>
 nnoremap <silent> <SID>(decrement)   :AddNumbers -1<CR>
 command! -range -nargs=1 AddNumbers
@@ -171,3 +168,6 @@ vnoremap <expr> cn "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>" . "``cgn"
 vnoremap <expr> cN "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>" . "``cgN"
 
 xnoremap p  "0p
+
+" Command to duplicate write of buffers
+command -nargs=1 -complete=dir DuplicateAt autocmd BufWritePost <buffer> w! <args>/%

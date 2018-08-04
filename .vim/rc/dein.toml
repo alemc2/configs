@@ -95,9 +95,6 @@ repo = 'nsf/gocode'
 rtp = 'vim'
 
 [[plugins]]
-repo = 'vim-jp/vimdoc-ja'
-
-[[plugins]]
 repo = 'kballard/vim-fish'
 
 [[plugins]]
